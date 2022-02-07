@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customcss %}
+<link href="{% static 'link_style.css' %}" rel="stylesheet">
+{% endblock customcss %}
+
+{% block header %}
+<!--カテゴリの選択タブ-->
+    <ul class="tabs" data-tabs id="example-tabs">
+        <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">キッチン</a></li>
+        <li class="tabs-title"><a data-tabs-target='panel2' href='#panel2'>風呂/トイレ</a></li>
+        <li class="tabs-title"><a data-tabs-target='panel3' href='#panel3'>部屋</a></li>
+        <li class="tabs-title"><a data-tabs-target='panel4' href='#panel4'>料理</a></li>
+        <li class="tabs-title"><a data-tabs-target='panel5' href='#panel5'>アメニティ</a></li>
+        <li class="tabs-title"><a data-tabs-target='panel6' href='#panel6'>その他</a></li>
+    </ul>
+{% endblock header %}
+
+{% block content %}
+<form action="" method="POST">
+    {{}}
+    <input type="submit" value="create">
+</form>
+
+{% endblock %}

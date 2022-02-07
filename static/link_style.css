@@ -1,0 +1,7 @@
+.custom-item-list table thead th, .custom-item-list table tbody td{
+    text-align:center;
+}
+.custom-button-group .grid-x .cell{
+    margin-top: 1em;
+    text-align: center;
+}

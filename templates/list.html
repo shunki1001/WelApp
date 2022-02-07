@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customcss %}
+<link href="{% static 'link_style.css' %}" rel="stylesheet">
+{% endblock customcss %}
+
+{% block header %}
+<!--カテゴリの選択タブ-->
+    <ul class="tabs" data-tabs id="example-tabs">
+        <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">キッチン</a></li>
+        <li class="tabs-title"><a data-tabs-target='panel2' href='#panel2'>風呂/トイレ</a></li>
+        <li class="tabs-title"><a data-tabs-target='panel3' href='#panel3'>部屋</a></li>
+        <li class="tabs-title"><a data-tabs-target='panel4' href='#panel4'>料理</a></li>
+        <li class="tabs-title"><a data-tabs-target='panel5' href='#panel5'>アメニティ</a></li>
+        <li class="tabs-title"><a data-tabs-target='panel6' href='#panel6'>その他</a></li>
+    </ul>
+{% endblock header %}
+
+{% block content %}
+<!--買うモノリストとその数-->
+<div class="tabs-content" data-tabs-content="example-tabs">
+    <div class="tabs-panel is-active" id="panel1">
+        <div class="custom-item-list">
+            <table>
+                <thead>
+                <tr>
+                    <th>アイテム</th>
+                    <th width="3em"></th>
+                    <th width="5em">数</th>
+                    <th width="3em"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in kitchen_list %}
+                <tr>
+                    <td>{{ item.title }}</td>
+                    <td>ー</td>
+                    <td>{{ item.number }}</td>
+                    <td>＋</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tabs-panel" id="panel2">
+        <div class="custom-item-list">
+            <table>
+                <thead>
+                <tr>
+                    <th>アイテム</th>
+                    <th width="3em"></th>
+                    <th width="5em">数</th>
+                    <th width="3em"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in bath_list %}
+                <tr>
+                    <td>{{ item.title }}</td>
+                    <td>ー</td>
+                    <td>{{ item.number }}</td>
+                    <td>＋</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tabs-panel" id="panel3">
+        <div class="custom-item-list">
+            <table>
+                <thead>
+                <tr>
+                    <th>アイテム</th>
+                    <th width="3em"></th>
+                    <th width="5em">数</th>
+                    <th width="3em"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in room_list %}
+                <tr>
+                    <td>{{ item.title }}</td>
+                    <td>ー</td>
+                    <td>{{ item.number }}</td>
+                    <td>＋</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tabs-panel" id="panel4">
+        <div class="custom-item-list">
+            <table>
+                <thead>
+                <tr>
+                    <th>アイテム</th>
+                    <th width="3em"></th>
+                    <th width="5em">数</th>
+                    <th width="3em"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in cook_list %}
+                <tr>
+                    <td>{{ item.title }}</td>
+                    <td>ー</td>
+                    <td>{{ item.number }}</td>
+                    <td>＋</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tabs-panel" id="panel5">
+        <div class="custom-item-list">
+            <table>
+                <thead>
+                <tr>
+                    <th>アイテム</th>
+                    <th width="3em"></th>
+                    <th width="5em">数</th>
+                    <th width="3em"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in amenity_list %}
+                <tr>
+                    <td>{{ item.title }}</td>
+                    <td>ー</td>
+                    <td>{{ item.number }}</td>
+                    <td>＋</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tabs-panel" id="panel6">
+        <div class="custom-item-list">
+            <table>
+                <thead>
+                <tr>
+                    <th>アイテム</th>
+                    <th width="3em"></th>
+                    <th width="5em">数</th>
+                    <th width="3em"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in other_list %}
+                <tr>
+                    <td>{{ item.title }}</td>
+                    <td>ー</td>
+                    <td>{{ item.number }}</td>
+                    <td>＋</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="custom-button-group">
+    <div class="grid-x grid-margin-x">
+        <div class="cell small-6"><a href="" class="button primary">NEW</a></div>
+        <div class="cell small-6"><a href="#features" class="button secondary">Delete</a></div>
+    </div>
+</div>
+{% endblock %}
