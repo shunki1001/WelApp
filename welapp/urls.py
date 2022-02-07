@@ -4,5 +4,5 @@ from .views import welfunc, createList
 
 urlpatterns = [
     path('list/', welfunc, name='list'),
-    path('creat/', createList.as_view(), {})
+    path('create/', createList.as_view(), name='create')
 ]

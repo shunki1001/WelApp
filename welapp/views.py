@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 
 from welapp.models import WelModel
 from django.views.generic.edit import CreateView
@@ -20,3 +21,5 @@ def welfunc(request):
 class createList(CreateView):
     template_name = 'create.html'
     model = WelModel
+    fields = ('title', 'number', 'category')
+    success_url = reverse_lazy('list')
