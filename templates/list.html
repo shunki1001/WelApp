@@ -34,7 +34,7 @@
                 <tbody>
                 {% for item in kitchen_list %}
                 <tr>
-                    <td>{{ item.title }}</td>
+                    <td><a href="{% url 'detail' item.pk %}">{{ item.title }}</a></td>
                     <td>ー</td>
                     <td>{{ item.number }}</td>
                     <td>＋</td>
@@ -167,8 +167,9 @@
 </div>
 <div class="custom-button-group">
     <div class="grid-x grid-margin-x">
-        <div class="cell small-6"><a href="" class="button primary">NEW</a></div>
-        <div class="cell small-6"><a href="#features" class="button secondary">Delete</a></div>
+        <div class="cell small-4"></div>
+        <div class="cell small-4"><a href="{% url 'create' %}" class="button primary">NEW</a></div>
+        <div class="cell small-4"></div>
     </div>
 </div>
 {% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customcss %}
+<link href="{% static 'detail_style.css' %}" rel="stylesheet">
+{% endblock customcss %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+
+<div class="grid-x">
+    <div class="cell small-4"></div>
+    <div class="cell small-4 custom-detail-container">
+        <div class="card" style="width: 300px;">
+            <div class="card-section">
+            <p>{{ object.title }}</p>
+            <p>{{ object.number }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="cell small-4"></div>
+</div>
+{% endblock %}
