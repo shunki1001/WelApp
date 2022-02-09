@@ -10,8 +10,8 @@
 
 {% block content %}
 <form action="" method="POST">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="create">
+    <p>「{{ object }}」を本当に削除してよろし？</p>
+    <input type="submit" value="Delete">
 </form>
 
 {% endblock %}

@@ -1,3 +1,4 @@
+from audioop import reverse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 
@@ -28,3 +29,7 @@ class detailView(DetailView):
     template_name='detail.html'
     model = WelModel
     
+class deleteView(DeleteView):
+    template_name = 'delete.html'
+    model = WelModel
+    success_url = reverse_lazy('list')
