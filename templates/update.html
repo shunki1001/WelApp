@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customcss %}
+<link href="{% static 'link_style.css' %}" rel="stylesheet">
+{% endblock customcss %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+<p>「{{ object }}」を編集できるよ</p>
+<form action="" method="POST">{% csrf_token %}
+    {{ form.title }}
+    {{ form.number }}
+    {{ form.category }}
+    <input type="submit" value="Update">
+</form>
+
+{% endblock %}

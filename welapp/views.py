@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 
 from welapp.models import WelModel
-from django.views.generic import CreateView, DeleteView, DetailView
+from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
 
 # Create your views here.
 
@@ -32,4 +32,10 @@ class detailView(DetailView):
 class deleteView(DeleteView):
     template_name = 'delete.html'
     model = WelModel
+    success_url = reverse_lazy('list')
+
+class updateView(UpdateView):
+    template_name = 'update.html'
+    model = WelModel
+    fields = ('title', 'number', 'category')
     success_url = reverse_lazy('list')

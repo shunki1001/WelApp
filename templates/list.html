@@ -58,7 +58,7 @@
                 <tbody>
                 {% for item in bath_list %}
                 <tr>
-                    <td>{{ item.title }}</td>
+                    <td><a href="{% url 'detail' item.pk %}">{{ item.title }}</a></td>
                     <td>ー</td>
                     <td>{{ item.number }}</td>
                     <td>＋</td>
@@ -82,7 +82,7 @@
                 <tbody>
                 {% for item in room_list %}
                 <tr>
-                    <td>{{ item.title }}</td>
+                    <td><a href="{% url 'detail' item.pk %}">{{ item.title }}</a></td>
                     <td>ー</td>
                     <td>{{ item.number }}</td>
                     <td>＋</td>
@@ -106,7 +106,7 @@
                 <tbody>
                 {% for item in cook_list %}
                 <tr>
-                    <td>{{ item.title }}</td>
+                    <td><a href="{% url 'detail' item.pk %}">{{ item.title }}</a></td>
                     <td>ー</td>
                     <td>{{ item.number }}</td>
                     <td>＋</td>
@@ -130,7 +130,7 @@
                 <tbody>
                 {% for item in amenity_list %}
                 <tr>
-                    <td>{{ item.title }}</td>
+                    <td><a href="{% url 'detail' item.pk %}">{{ item.title }}</a></td>
                     <td>ー</td>
                     <td>{{ item.number }}</td>
                     <td>＋</td>
@@ -154,7 +154,7 @@
                 <tbody>
                 {% for item in other_list %}
                 <tr>
-                    <td>{{ item.title }}</td>
+                    <td><a href="{% url 'detail' item.pk %}">{{ item.title }}</a></td>
                     <td>ー</td>
                     <td>{{ item.number }}</td>
                     <td>＋</td>
